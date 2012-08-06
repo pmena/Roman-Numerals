@@ -4,17 +4,17 @@ Given /^un conversor$/ do
   @conversor = Conversor.new
 end
 
-When /^le paso (\d+)$/ do |numero|
-  @resultado = @conversor.convertir_romano(numero.to_i)
+When /^le paso ([IVX]{1,3})$/ do |numero|
+  @resultado = @conversor.convertir_romano(numero)
 end
 
-Then /^lo convierte a ([A-Z]*)$/ do |valor_romano|
+Then /^lo convierte a ([0-9]*)$/ do |valor_romano|
   @resultado.should == valor_romano
 end
 
 class Conversor
 
-  def convertir_romano(numero)      
+  def convertir_romano(numero)
     return 1 if numero == "I"        
     return 2 if numero == "II"   
     return 3 if numero == "III"        
@@ -24,7 +24,7 @@ class Conversor
     return 7 if numero == "VII"        
     return 8 if numero == "VIII"        
     return 9 if numero == "IX"        
-    "X"
+    10
   end
 
 end
