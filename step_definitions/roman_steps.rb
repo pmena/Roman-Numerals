@@ -15,9 +15,16 @@ end
 class Conversor
 
   def convertir_romano(numero)      
-    return "I" if numero == 1
-    return "II" if numero == 2
-    "III"
+    return 1 if numero == "I"        
+    return 2 if numero == "II"   
+    return 3 if numero == "III"        
+    return 4 if numero == "IV"        
+    return 5 if numero == "V"        
+    return 6 if numero == "VI"        
+    return 7 if numero == "VII"        
+    return 8 if numero == "VIII"        
+    return 9 if numero == "IX"        
+    "X"
   end
 
 end
